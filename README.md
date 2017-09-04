@@ -477,7 +477,7 @@ post.last_audited_on  #=> <timestamp>
 ### To be implemented
 
 ```ruby
-# Returns the post (not a version) as it looked at around the the given timestamp.
+# Returns the post (not a version) as it looked at around the given timestamp.
 post.version_at(timestamp)
 
 # Returns the objects (not Versions) as they were between the given times.
