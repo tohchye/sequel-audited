@@ -3,7 +3,7 @@ class AuditLog < Sequel::Model
   # handle versioning of audited records
   plugin :list, field: :version, scope: [:model_type, :model_pk]
   plugin :timestamps
-  plugin :serialization, :json, :changed
+  # plugin :serialization, :json, :changed
 
   # TODO: see if we should add these
   # many_to_one :associated, polymorphic: true
@@ -272,7 +272,8 @@ module Sequel
               model_pk:   pk,
               model_ref:  ref,
               event:      event,
-              changed:    changed
+              changed:    changed.to_json,
+              created_at: Time.now
             )
           end
         end
